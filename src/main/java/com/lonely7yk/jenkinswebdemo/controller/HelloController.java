@@ -17,6 +17,6 @@ public class HelloController {
 
 	@RequestMapping("/hello/update")
 	public String update() {
-		return "update";
+		return "hello update";
 	}
 }
