@@ -12,6 +12,11 @@ public class HelloController {
 
 	@RequestMapping("/hello/add")
 	public String add() {
-		return "add";
+		return "hello add";
+	}
+
+	@RequestMapping("/hello/update")
+	public String update() {
+		return "update";
 	}
 }
