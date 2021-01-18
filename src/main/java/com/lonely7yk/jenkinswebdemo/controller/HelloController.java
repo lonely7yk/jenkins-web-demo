@@ -24,4 +24,9 @@ public class HelloController {
 	public String delete() {
 		return "hello delete";
 	}
+
+	@RequestMapping("/hello/get")
+	public String get() {
+		return "hello get";
+	}
 }
