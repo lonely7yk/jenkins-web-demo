@@ -19,4 +19,9 @@ public class HelloController {
 	public String update() {
 		return "hello update";
 	}
+
+	@RequestMapping("/hello/delete")
+	public String delete() {
+		return "hello delete";
+	}
 }
