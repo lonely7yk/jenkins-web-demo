@@ -9,4 +9,9 @@ public class HelloController {
 	public String hello() {
 		return "hello";
 	}
+
+	@RequestMapping("/hello/add")
+	public String add() {
+		return "add";
+	}
 }
