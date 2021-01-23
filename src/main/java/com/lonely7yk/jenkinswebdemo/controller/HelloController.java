@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-	public static final String BRANCH = "master";
+	public static final String BRANCH = "v1";
 
 	@RequestMapping("/hello")
 	public String hello() {
