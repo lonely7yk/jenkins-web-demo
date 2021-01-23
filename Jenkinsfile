@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('pull code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '5953128d-96a8-4a5e-9bc9-9ad787e0b621', url: 'git@github.com:lonely7yk/jenkins-web-demo.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '5953128d-96a8-4a5e-9bc9-9ad787e0b621', url: 'git@github.com:lonely7yk/jenkins-web-demo.git']]])
             }
         }
         stage('build project') {
