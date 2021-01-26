@@ -7,6 +7,18 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/${branch}']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '5953128d-96a8-4a5e-9bc9-9ad787e0b621', url: 'git@github.com:lonely7yk/jenkins-web-demo.git']]])
             }
         }
+        stage('SonarQube checking') {
+            steps {
+                script {
+                    // 引入 SonarQubeScanner 工具（在 Global Tool Configuration 中）
+                    scannerHome = tool 'sonar-scanner'
+                }
+                // sonarqube server 的名字（在 Configure System 中）
+                withSonarQubeEnv('sonarqube') {
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
+            }
+        }
         stage('build project') {
             steps {
                 sh 'mvn clean package'
